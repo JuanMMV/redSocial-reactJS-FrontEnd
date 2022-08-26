@@ -8,7 +8,7 @@ const Layout = ({ children, title, description, login }) => {
       {login ? (
         <>
           <main>{children}</main>
-          <footer>footer</footer>
+      
         </>
       ) : (
         <>

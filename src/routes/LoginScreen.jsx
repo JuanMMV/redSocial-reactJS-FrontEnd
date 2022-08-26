@@ -3,6 +3,7 @@ import { useState } from "react";
 import RegisterComponent from "../components/RegisterComponent";
 import { useNavigate } from "react-router-dom";
 import Layout from "../components/Layout";
+import "../styles/routesStyles/Login.css";
 
 import React from "react";
 

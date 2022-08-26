@@ -1,0 +1,122 @@
+/*========================*/
+/*      Login style       */
+/*========================*/
+
+form.login-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+--opacidad-negro: 0.5;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, var(--opacidad-negro)),
+      rgba(0, 0, 0, var(--opacidad-negro))
+    ),
+    url("https://i0.wp.com/pxlbbq.com/wp-content/uploads/2017/07/utawarerumono-mask-of-deception-image-a-la-une.jpg?fit=1600%2C1007&ssl=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.login-card {
+  
+  text-align: center;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  padding: 1.5rem 3.5rem 3.5rem 3.5rem;
+  background-color: rgba(16, 34, 83, 0.7);
+  gap: 2rem;
+}
+
+.login-card .input-card {
+  display: grid;
+  width: 12vw;
+  gap: 1rem;
+}
+
+.register-span {
+  cursor: pointer;
+}
+
+/*========================*/
+/*    Registro style      */
+/*========================*/
+
+.register-container {
+
+  display: flex;
+  height: 70vh;
+  width: 50vw;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+  --opacidad-negro: 0.7;
+  background-image: linear-gradient(
+      rgba(0, 0, 0, var(--opacidad-negro)),
+      rgba(0, 0, 0, var(--opacidad-negro))
+    ),
+    url("https://images.unsplash.com/photo-1444080748397-f442aa95c3e5?ixlib=rb-1.2.1&w=1080&fit=max&q=80&fm=jpg&crop=entropy&cs=tinysrgb");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.register-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 30%;
+}
+
+/*========================*/
+/*       input style      */
+/*========================*/
+
+.input-form {
+  background-color: transparent;
+  padding: 0.9rem;
+  border: 0.1rem solid rgb(151, 151, 151);
+  border-radius: 0.3rem;
+  color: #fff;
+  width: 80%;
+  font-size: 1rem;
+  transition: 0.3s ease-in-out;
+}
+
+.input-form:focus {
+  border: 0.1rem solid #997af0;
+  outline: none;
+}
+
+.button-form {
+  background-color: rgb(151, 151, 151);
+  color: #fff;
+  padding: 1rem 2rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 0.3rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin-top: 10%;
+}
+
+.button-form:hover {
+  background-color: rgb(119, 119, 119);
+}
+
+.close-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background-color: transparent;
+  color: #fff;
+  padding: 1rem 1rem;
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+}
