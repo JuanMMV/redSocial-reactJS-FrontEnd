@@ -6,7 +6,12 @@ const HomeScreen = () => {
   return (
     <Layout title="Home" description="Pagina Home">
       <PostsComponent />
+      {/*
+
+                
       <TextBoxComponent />
+       */}
+
     </Layout>
   );
 };

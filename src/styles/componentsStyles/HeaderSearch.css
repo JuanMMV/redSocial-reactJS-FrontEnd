@@ -1,0 +1,33 @@
+.header-seach {
+  background: rgba(250, 2, 2, 0.3);
+  height: 100vh;
+  width: 670px;
+  background-color: royalblue;
+  position: fixed;
+  margin: 0 0 0 1385px;
+  /*flex-grow: 1;*/
+}
+
+.locaction {
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+
+@media screen and (max-width: 1600px) {
+  .header-seach {
+    position: fixed;
+    margin-left: 1100px;
+    background: rgba(250, 2, 2, 0.3);
+    height: 100vh;
+
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-seach {
+    display: none;
+  }
+
+}
+

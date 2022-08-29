@@ -1,0 +1,278 @@
+/*========================*/
+/*      navbar style      */
+/*========================*/
+
+
+div.container-navbar {
+  height: 100vh;
+  background: rebeccapurple;
+  position : fixed;
+  width: 385px;
+  padding: 0 0 0 85px;
+}
+
+
+nav.sidebar {
+  height: 100%;
+  width: 300px;
+  background: transparent;
+  border-right: 1px solid #fff2;
+  padding: 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.navbar {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  z-index: 100;
+  gap: 15px;
+}
+
+.navbar-brand {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 8px 8px 4px 10px;
+  border-radius: 50%;
+}
+
+.navbar-brand:hover {
+  background: var(--brandBackground);
+}
+
+.navbar-brand a {
+  text-decoration: none;
+  color: var(--brandColor);
+}
+
+.navbar-brand a .logo-app {
+  font-size: 30px;
+}
+
+.nav-item {
+  padding: 8px 25px 8px 10px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background: var(--itemBackground);
+}
+
+.nav-item .item-icon {
+  margin-right: 15px;
+}
+
+.nav-item .item-icon .icon {
+  font-size: 26px;
+  --ionicon-stroke-width: 30px;
+}
+
+a.tweet-btn {
+  display: block;
+  width: 230px;
+  background: var(--tweetBtnBg);
+  color: var(--colorWhite);
+  text-align: center;
+  padding: 15px;
+  margin-top: 5px;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+a.tweet-btn:hover {
+  --tweetBtnBg: #1d9bf0ee;
+}
+
+a.tweet-btn .pencil-icon {
+  font-size: 20px;
+  color: #fff;
+  display: none;
+}
+
+a.profile-btn {
+  width: 250px;
+  height: 60px;
+  display: flex;
+  margin: 10px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+
+.profile-btn:hover {
+  background: var(--itemBackground);
+}
+
+.profile-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img.profile-img {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.profile-info .name {
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.profile-info .username {
+  color: var(--colorSecondary);
+}
+
+.option-icon .icon {
+  font-size: 16px;
+  margin-top: 2px;
+}
+
+/* Responsive ----------------------------------------------------------- */
+
+@media screen and (max-width: 1600px) {
+  div.container-navbar {
+    height: 100vh;
+    background: transparent;
+    padding: 0 3.1em;
+    position: fixed;
+    width: 350px;
+    
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  div.container-navbar {
+    height: 100vh;
+    background: transparent;
+    padding: 0 7.2em;
+    position: fixed;
+    /*   width: 420px; */
+  }
+
+  nav.sidebar {
+    width: 100px;
+  }
+  .nav-item {
+    padding: 9px 11px;
+  }
+  .nav-item .item-icon {
+    margin-right: 0;
+  }
+  .nav-item .item-link {
+    display: none;
+  }
+  .nav-item.hash {
+    width: 48px;
+    height: 48px;
+  }
+  a.tweet-btn {
+    line-height: 0;
+    font-size: 20px;
+    width: 45px;
+    padding: 12px 15px;
+  }
+  a.tweet-btn .pencil-icon {
+    display: inline-block;
+  }
+  a.tweet-btn .text {
+    display: none;
+  }
+  .profile-info > div {
+    display: none;
+  }
+  a.profile-btn .option-icon {
+    display: none;
+  }
+  img.profile-img {
+    display: flex;
+    align-items: center;
+
+  }
+  a.profile-btn {
+    margin: 15px 30px;
+    padding: 10px 12.5px;
+    width: 60px;
+  }
+}
+
+
+@media screen and (max-width: 900px) {
+  div.container-navbar {
+    height: 100vh;
+    background: transparent;
+    padding: 0 0 0 0;
+    position: fixed;
+     width: 80px;
+  }
+
+  nav.sidebar {
+    width: 70px;
+  }
+
+  .navbar {
+    padding: 0 0 0 20px;
+  }
+  .navbar-brand {
+    padding: 0 0 0 0;
+  }
+  
+  .nav-item {
+    padding: 9px 0;
+  }
+  .nav-item .item-icon {
+    margin-right: 0;
+  }
+  .nav-item .item-link {
+    display: none;
+  }
+  .nav-item.hash {
+    width: 15px;
+    height: 15px;
+ 
+  }
+  a.tweet-btn {
+    margin-left:-5px;
+
+    width: 40px;
+    padding: 10px 0;
+    background-color: rebeccapurple;
+  }
+  a.tweet-btn .pencil-icon {
+    display: inline-block;
+  }
+  a.tweet-btn .text {
+    display: none;
+  }
+  .profile-info > div {
+    display: none;
+  }
+  a.profile-btn .option-icon {
+    display: none;
+  }
+  img.profile-img {
+    display: flex;
+    align-items: center;
+
+  }
+  a.profile-btn {
+    margin: 0 0 30px 15px;
+    padding: 5px 5px;
+    width: 60px;
+  }
+}
+
+
+
+/*Fin Navbar*/

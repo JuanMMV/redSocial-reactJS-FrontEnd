@@ -11,9 +11,13 @@ const LoginScreen = () => {
   const navigate = useNavigate();
   const [isVisible, setIsVisible] = useState(false);
 
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  };
+
   return (
     <Layout title="Login" description="Page login|register" login>
-      <form className="login-container">
+      <form className="login-container" onSubmit={(e)=> handleSubmit(e)}>
         <div className="login-card">
           <h1>login</h1>
           <div className="input-card">

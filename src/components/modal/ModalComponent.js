@@ -13,6 +13,7 @@ export function ModalComponent({ isVisible, setIsVisible, children }) {
       <Modal
         isOpen={isVisible}
         className="modal-container"
+        appElement={document.getElementById('root') || undefined}
         style={{
           overlay: {
             backgroundColor: 'transparent'

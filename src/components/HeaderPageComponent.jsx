@@ -1,3 +1,4 @@
+import '../styles/componentsStyles/HeaderPage.css'
 
 const HeaderPageComponent = () => {
   return (

@@ -1,4 +1,4 @@
-
+import '../styles/componentsStyles/HeaderSearch.css'
 const HeaderSeachComponent = () => {
   return (
     <div className="header-seach">

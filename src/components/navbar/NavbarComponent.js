@@ -1,8 +1,7 @@
-import { navLinks } from '../../utils/navLinks'
-//import { Link } from 'react-router-dom'
-import { FaTwitter, FaPencilAlt } from 'react-icons/fa';
-import { FiMoreHorizontal } from 'react-icons/fi';
-
+import { navLinks } from "../../utils/navLinks";
+import { FaTwitter, FaPencilAlt } from "react-icons/fa";
+import { FiMoreHorizontal } from "react-icons/fi";
+import "../../styles/componentsStyles/Navbar.css";
 
 export default function NavbarComponent() {
   return (
@@ -10,10 +9,8 @@ export default function NavbarComponent() {
       <nav className="sidebar">
         <ul className="navbar">
           <li className="navbar-brand">
-            <a href='/'>
-              <FaTwitter
-                className="logo-app"
-              />
+            <a href="/">
+              <FaTwitter className="logo-app" />
             </a>
           </li>
           {navLinks.map((link, index) => {
@@ -22,18 +19,26 @@ export default function NavbarComponent() {
                 <a href={link.path} className="item-icon">
                   {link.icon}
                 </a>
-                <a href={link.path} className="item-link">{link.name}</a>
+                <a href={link.path} className="item-link">
+                  {link.name}
+                </a>
               </li>
-            )
+            );
           })}
-          <a href='#' className="tweet-btn">
-            <FaPencilAlt className='pencil-icon'/>
+          <a href="#" className="tweet-btn">
+            <FaPencilAlt className="pencil-icon" />
             <div className="text">Tweet</div>
           </a>
         </ul>
         <a href="#" className="profile-btn">
           <div className="profile-info">
-            <img src='/images/profile.jpg' alt='profile' className="profile-img" width={35} height={35} />
+            <img
+              src="/images/profile.jpg"
+              alt="profile"
+              className="profile-img"
+              width={35}
+              height={35}
+            />
             <div>
               <p className="name">Aki</p>
               <p className="username">@akichan</p>
@@ -45,8 +50,5 @@ export default function NavbarComponent() {
         </a>
       </nav>
     </div>
-
-  )
+  );
 }
-
-
