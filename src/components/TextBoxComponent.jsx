@@ -1,13 +1,9 @@
-
+import '../styles/componentsStyles/Textbox.css'
 
 const TextBoxComponent = () => {
   return (
-    <div className="textbox-container">
-      <input
-        type="text"
-        placeholder=""
-        name="username"
-      />
+    <div className="home-textbox-container">
+    <h1 className='textocaja'>TEXBOX</h1>
     </div>
   )
 }

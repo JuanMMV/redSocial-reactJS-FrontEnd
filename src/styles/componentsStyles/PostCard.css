@@ -1,0 +1,71 @@
+.card-container {
+  background-color: tomato;
+  width: 90%;
+  height: 100%;
+}
+
+.card-info {
+  margin: 10px;
+}
+
+.userinfo-post {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  background-color: royalblue;
+}
+
+.userinfo-img {
+  border-radius: 50px;
+}
+
+.username-post {
+  display: flex;
+  padding: 5px;
+  flex-direction: column;
+  margin-left: 5px;
+  background-color: yellow;
+}
+
+.description-post {
+  background-color: cornflowerblue;
+  padding: 10px;
+  margin: 10px;
+}
+
+.container-image-post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: chocolate;
+}
+
+.background-image-post {
+
+  align-items: center;
+  justify-content: center;
+  max-width: 700px;
+  max-height: 600px;
+  border-radius: 10px;
+}
+
+.image-post {
+ width: 700px;
+ height: 600px;
+  object-fit: cover;
+}
+
+.interaction-post {
+  display: flex;
+  align-items: center;
+  padding: 10px 0 10px 10px;
+  gap: 10px;
+}
+
+.icon-post {
+  font-size: 30px;
+}
+
+.icon-outline {
+  color: pink;
+}

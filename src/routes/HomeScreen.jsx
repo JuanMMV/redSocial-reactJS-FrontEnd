@@ -5,13 +5,13 @@ import PostsComponent from "../components/PostsComponent";
 const HomeScreen = () => {
   return (
     <Layout title="Home" description="Pagina Home">
+      <TextBoxComponent />
       <PostsComponent />
       {/*
 
                 
-      <TextBoxComponent />
-       */}
 
+       */}
     </Layout>
   );
 };

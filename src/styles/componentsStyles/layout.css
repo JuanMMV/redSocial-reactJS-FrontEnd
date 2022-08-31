@@ -17,9 +17,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   margin: 80px 0 0 385px;
   width: 1000px;
-  /*flex-direction: column;*/
 }
 
 /* Responsive ----------------------------------------------------------- */

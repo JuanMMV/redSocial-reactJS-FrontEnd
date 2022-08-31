@@ -1,47 +1,67 @@
-import { postDataExample } from '../utils/postDataExample'
+import { postDataExample } from "../utils/postDataExample";
+import "../styles/componentsStyles/PostCard.css";
+import { BsHeart, BsHeartFill } from "react-icons/bs";
+import { FaRetweet, FaRegComment } from "react-icons/fa";
+import { AiOutlineRetweet } from "react-icons/ai";
 
 const PostsComponent = () => {
-
   return (
-    <body className="container-card">
-      <section className="card-card">
-        {postDataExample.map((post, index) => {
-          return (
-            post.image !== undefined && (
-              <div key={index} className="card">
-                <div className="container-image">
-                  <div className="img">
-                  <img
-                    src={post.image}
-                    width="100%" 
-                    height="100%" 
-                    layout="responsive" 
-                    objectFit="contain"
-                  />
-                  </div>
-                </div>
-                <div className="description">
-                  <span>{post.comentario}</span>
+    <div className="card-container">
+      {postDataExample.map((post, index) => {
+        return (
+          post.image !== undefined && (
+            <div key={index} className="card-info">
+              <div className="userinfo-post">
+                <img
+                  src={post.user.userImage}
+                  alt="profile"
+                  className="userinfo-img"
+                  width={50}
+                  height={50}
+                />
+                <div className="username-post">
+                  <text>{post.user.userName}</text>
+                  <text>{post.user.userIdString}</text>
                 </div>
               </div>
-            )
+              <div className="description-post">
+                <p>{post.description}</p>
+              </div>
+              <div className="container-image-post">
+                <div className="background-image-post">
+                  <img
+                    src={post.image}
+                    className="image-post"
+                  />
+                </div>
+              </div>
+              <div className="interaction-post">
+                <BsHeart className="icon-post icon-outline" />
+                <BsHeartFill className="icon-post icon-outline" />
+                <span>{post.nLikes}</span>
+                <FaRegComment className="icon-post icon-outline" />
+                <span>{post.nComment}</span>
+                <AiOutlineRetweet className="icon-post icon-outline" />
+                <FaRetweet className="icon-post icon-outline" />
+
+                <span>{post.nRetweet}</span>
+              </div>
+            </div>
           )
-        })}
-      </section>
-    </body>
-  )
-}
+        );
+      })}
+    </div>
+  );
+};
 
-export default PostsComponent
-
+export default PostsComponent;
 
 export function img({ src, styles }) {
-
   return (
     <div className={styles.containerImage}>
       <img className="next-image" src={src} layout="fill" objectFit="contain" />
     </div>
-  )
+  );
 }
 
 /*
