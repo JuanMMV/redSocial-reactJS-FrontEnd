@@ -7,10 +7,18 @@ export const postDataExample = [
       userIdString: "@aki-chan",
     },
     description: "Miyu-chan es tan tierna",
-    image: "/images/P1.png" /**esta imagen cortarla abajo */,
     images: [
       {
-        /**aca van imagenes */
+        image: "/images/P1.png",
+      },
+      {
+        image: "/images/P7.jpg",
+      },
+      {
+        image: "/images/P11.png",
+      },
+      {
+        image: "/images/P1.png",
       },
     ],
     nLikes: 7,
@@ -51,7 +59,7 @@ export const postDataExample = [
       },
     ],
   },
-  {
+ /*  {
     id: "2",
     user: {
       userName: "Aki-chan",
@@ -59,10 +67,9 @@ export const postDataExample = [
       userIdString: "@aki-chan",
     },
     description: "FASFSAFS",
-    image: "/images/P9.jpg",
     images: [
       {
-        /**aca van imagenes */
+        image: "/images/P9.jpg",
       },
     ],
     nLikes: 7,
@@ -89,20 +96,8 @@ export const postDataExample = [
         userIdString: "@emili-chan",
         userComment: "Bonita",
       },
-      {
-        userName: "Emili-chan",
-        userImage: "/images/profile.jpg",
-        userIdString: "@emili-chan",
-        userComment: "Bonita",
-      },
-      {
-        userName: "Emili-chan",
-        userImage: "/images/profile.jpg",
-        userIdString: "@emili-chan",
-        userComment: "Bonita",
-      },
     ],
-  },
+  },*/
   /**
    *  {
     id: "2",

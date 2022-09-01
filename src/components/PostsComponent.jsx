@@ -9,32 +9,25 @@ const PostsComponent = () => {
     <div className="card-container">
       {postDataExample.map((post, index) => {
         return (
-          post.image !== undefined && (
+          post.images !== undefined && (
             <div key={index} className="card-info">
               <div className="userinfo-post">
                 <img
                   src={post.user.userImage}
                   alt="profile"
-                  className="userinfo-img"
+                  className="userinfo-img-post"
                   width={50}
                   height={50}
                 />
                 <div className="username-post">
-                  <text>{post.user.userName}</text>
-                  <text>{post.user.userIdString}</text>
+                  <span>{post.user.userName}</span>
+                  <span>{post.user.userIdString}</span>
                 </div>
               </div>
               <div className="description-post">
                 <p>{post.description}</p>
               </div>
-              <div className="container-image-post">
-                <div className="background-image-post">
-                  <img
-                    src={post.image}
-                    className="image-post"
-                  />
-                </div>
-              </div>
+              <Getimages images={post.images} />
               <div className="interaction-post">
                 <BsHeart className="icon-post icon-outline" />
                 <BsHeartFill className="icon-post icon-outline" />
@@ -43,7 +36,6 @@ const PostsComponent = () => {
                 <span>{post.nComment}</span>
                 <AiOutlineRetweet className="icon-post icon-outline" />
                 <FaRetweet className="icon-post icon-outline" />
-
                 <span>{post.nRetweet}</span>
               </div>
             </div>
@@ -56,10 +48,20 @@ const PostsComponent = () => {
 
 export default PostsComponent;
 
-export function img({ src, styles }) {
+export function Getimages({ images }) {
   return (
-    <div className={styles.containerImage}>
-      <img className="next-image" src={src} layout="fill" objectFit="contain" />
+    <div className="container-image-post">
+      {images.map((image, index) => {
+        return (
+          <img
+            src={image.image}
+            alt="imagen"
+            className="image-post"
+            key={index}
+            onClick={() => console.log("full")}
+          />
+        );
+      })}
     </div>
   );
 }
