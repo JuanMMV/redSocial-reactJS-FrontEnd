@@ -1,6 +1,6 @@
 .card-container {
   background-color: tomato;
-  width: 90%;
+  width: 70%;
   height: 100%;
 }
 
@@ -34,12 +34,32 @@
   margin: 10px;
 }
 
-.container-image-post {
+.container-image-post-1 {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  justify-items: stretch;
+  max-height: 700px;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.container-image-post-2 {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  justify-items: stretch;
+  max-height: 700px;
+  border-radius: 10px;
+  overflow:hidden;
+}
+
+.container-image-post-4 {
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   justify-items: stretch;
-  height: 700px;
+  max-height: 700px;
   border-radius: 10px;
   overflow:hidden;
 }
@@ -69,8 +89,7 @@
 
 .icon-post {
   font-size: 30px;
-}
-
-.icon-outline {
+  cursor: pointer;
   color: pink;
 }
+

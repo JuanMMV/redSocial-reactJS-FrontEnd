@@ -3,8 +3,12 @@ import "../styles/componentsStyles/PostCard.css";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRetweet, FaRegComment } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
+import { useState } from "react";
 
 const PostsComponent = () => {
+  const [isLike, setIsLike] = useState(false);
+  const [isShared, setIsShared] = useState(false);
+
   return (
     <div className="card-container">
       {postDataExample.map((post, index) => {
@@ -29,13 +33,31 @@ const PostsComponent = () => {
               </div>
               <Getimages images={post.images} />
               <div className="interaction-post">
-                <BsHeart className="icon-post icon-outline" />
-                <BsHeartFill className="icon-post icon-outline" />
+                {isLike ? (
+                  <BsHeartFill
+                    className="icon-post"
+                    onClick={() => setIsLike(!isLike)}
+                  />
+                ) : (
+                  <BsHeart
+                    className="icon-post"
+                    onClick={() => setIsLike(!isLike)}
+                  />
+                )}
                 <span>{post.nLikes}</span>
-                <FaRegComment className="icon-post icon-outline" />
+                <FaRegComment className="icon-post" />
                 <span>{post.nComment}</span>
-                <AiOutlineRetweet className="icon-post icon-outline" />
-                <FaRetweet className="icon-post icon-outline" />
+                {isShared ? (
+                  <FaRetweet
+                    className="icon-post"
+                    onClick={() => setIsShared(!isShared)}
+                  />
+                ) : (
+                  <AiOutlineRetweet
+                    className="icon-post"
+                    onClick={() => setIsShared(!isShared)}
+                  />
+                )}
                 <span>{post.nRetweet}</span>
               </div>
             </div>
@@ -50,7 +72,15 @@ export default PostsComponent;
 
 export function Getimages({ images }) {
   return (
-    <div className="container-image-post">
+    <div
+      className={
+        images.length === 1
+          ? "container-image-post-1"
+          : images.length === 2 || images.length === 3
+          ? "container-image-post-2"
+          : "container-image-post-4"
+      }
+    >
       {images.map((image, index) => {
         return (
           <img
