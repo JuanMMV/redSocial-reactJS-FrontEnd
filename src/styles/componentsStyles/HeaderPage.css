@@ -8,6 +8,7 @@
   /*flex-grow: 15;*/
   margin-left: 385px;
   position: fixed;
+  z-index:999;
 }
 
 .locaction {

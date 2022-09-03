@@ -31,7 +31,7 @@ const PostsComponent = () => {
               <div className="description-post">
                 <p>{post.description}</p>
               </div>
-              <Getimages images={post.images} />
+              <Getimages idPost={post.id} images={post.images} />
               <div className="interaction-post">
                 {isLike ? (
                   <BsHeartFill
@@ -70,7 +70,7 @@ const PostsComponent = () => {
 
 export default PostsComponent;
 
-export function Getimages({ images }) {
+export function Getimages({ idPost, images }) {
   return (
     <div
       className={
@@ -81,15 +81,31 @@ export function Getimages({ images }) {
           : "container-image-post-4"
       }
     >
-      {images.map((image, index) => {
+      {images.slice(0, 5).map((image, index, { length }) => {
         return (
-          <img
-            src={image.image}
-            alt="imagen"
-            className="image-post"
-            key={index}
-            onClick={() => console.log("full")}
-          />
+          <div key={index}>
+            <img
+              src={image.image}
+              alt="imagen"
+              className={
+                length === 3 && index === 1
+                  ? "image-post-max"
+                  : length === 5 && index === 3
+                  ? "image-post-max"
+                  : "image-post"
+              }
+              onClick={() => console.log("full")}
+            />
+            {(length === 5 && index === 3) || (length === 3 && index === 1) ? (
+              <span
+                className={
+                  length === 3 && index === 1 ? "n-images-3" : "n-images-5"
+                }
+              >
+                +2
+              </span>
+            ) : null}
+          </div>
         );
       })}
     </div>

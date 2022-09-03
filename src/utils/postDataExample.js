@@ -182,6 +182,69 @@ export const postDataExample = [
       },
     ],
   },
+  {
+    id: "5",
+    user: {
+      userName: "Aki-chan",
+      userImage: "/images/profile.jpg",
+      userIdString: "@aki-chan",
+    },
+    description: "Miyu-chan es tan tierna",
+    images: [
+      {
+        image: "/images/P1.png",
+      },
+      {
+        image: "/images/P7.jpg",
+      },
+      {
+        image: "/images/P11.png",
+      },
+      {
+        image: "/images/P1.png",
+      },
+      {
+        image: "/images/P1.png",
+      },
+    ],
+    nLikes: 7,
+    userLikes: [
+      {
+        userName: "Emili-chan",
+        userImage: "/images/profile.jpg",
+        userIdString: "@emili-chan",
+      },
+    ],
+    nComment: 8,
+    nRetweet: 7,
+    userRetweet: [
+      {
+        userName: "Emili-chan",
+        userImage: "/images/profile.jpg",
+        userIdString: "@emili-chan",
+      },
+    ],
+    comments: [
+      {
+        userName: "Emili-chan",
+        userImage: "/images/profile.jpg",
+        userIdString: "@emili-chan",
+        userComment: "Bonita",
+      },
+      {
+        userName: "Emili-chan",
+        userImage: "/images/profile.jpg",
+        userIdString: "@emili-chan",
+        userComment: "Bonita",
+      },
+      {
+        userName: "Emili-chan",
+        userImage: "/images/profile.jpg",
+        userIdString: "@emili-chan",
+        userComment: "Bonita",
+      },
+    ],
+  },
   /**
    *  {
     id: "2",
