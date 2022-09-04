@@ -206,6 +206,12 @@ export const postDataExample = [
       {
         image: "/images/P1.png",
       },
+      {
+        image: "/images/P7.jpg",
+      },
+      {
+        image: "/images/P7.jpg",
+      },
     ],
     nLikes: 7,
     userLikes: [

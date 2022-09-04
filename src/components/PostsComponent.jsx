@@ -97,13 +97,16 @@ export function Getimages({ idPost, images }) {
               onClick={() => console.log("full")}
             />
             {(length === 5 && index === 3) || (length === 3 && index === 1) ? (
-              <span
+              <div
                 className={
-                  length === 3 && index === 1 ? "n-images-3" : "n-images-5"
+                  length === 3 && index === 1
+                    ? "n-images-container-3"
+                    : "n-images-container-5"
                 }
+                onClick={()=>console.log("full desde div contador")}
               >
-                +2
-              </span>
+                <span className="n-images">+{length === 3 ?+2: images.length-3}</span>
+              </div>
             ) : null}
           </div>
         );
