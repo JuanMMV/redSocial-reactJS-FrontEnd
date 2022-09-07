@@ -3,19 +3,18 @@ import "../styles/componentsStyles/PostCard.css";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRetweet, FaRegComment } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
+import { FiShare2 } from "react-icons/fi";
+import { MdSaveAlt } from "react-icons/md";
 import { useState } from "react";
 
 const PostsComponent = () => {
-  const [isLike, setIsLike] = useState(false);
-  const [isShared, setIsShared] = useState(false);
-
   return (
     <div className="card-container">
       {postDataExample.map((post, index) => {
         return (
           post.images !== undefined && (
             <div key={index} className="card-info">
-              <div className="userinfo-post">
+              <div className="image-profile">
                 <img
                   src={post.user.userImage}
                   alt="profile"
@@ -23,42 +22,21 @@ const PostsComponent = () => {
                   width={50}
                   height={50}
                 />
-                <div className="username-post">
-                  <span>{post.user.userName}</span>
-                  <span>{post.user.userIdString}</span>
+              </div>
+              <div className="card-item-post">
+                <UserInfo
+                  userName={post.user.userName}
+                  userIdString={post.user.userIdString}
+                />
+                <div className="description-post">
+                  <p>{post.description}</p>
                 </div>
-              </div>
-              <div className="description-post">
-                <p>{post.description}</p>
-              </div>
-              <Getimages idPost={post.id} images={post.images} />
-              <div className="interaction-post">
-                {isLike ? (
-                  <BsHeartFill
-                    className="icon-post"
-                    onClick={() => setIsLike(!isLike)}
-                  />
-                ) : (
-                  <BsHeart
-                    className="icon-post"
-                    onClick={() => setIsLike(!isLike)}
-                  />
-                )}
-                <span>{post.nLikes}</span>
-                <FaRegComment className="icon-post" />
-                <span>{post.nComment}</span>
-                {isShared ? (
-                  <FaRetweet
-                    className="icon-post"
-                    onClick={() => setIsShared(!isShared)}
-                  />
-                ) : (
-                  <AiOutlineRetweet
-                    className="icon-post"
-                    onClick={() => setIsShared(!isShared)}
-                  />
-                )}
-                <span>{post.nRetweet}</span>
+                <Getimages idPost={post.id} images={post.images} />
+                <InteractionIcons
+                  nComment={post.nComment}
+                  nLikes={post.nLikes}
+                  nRetweet={post.nRetweet}
+                />
               </div>
             </div>
           )
@@ -103,9 +81,11 @@ export function Getimages({ idPost, images }) {
                     ? "n-images-container-3"
                     : "n-images-container-5"
                 }
-                onClick={()=>console.log("full desde div contador")}
+                onClick={() => console.log("full desde div contador")}
               >
-                <span className="n-images">+{length === 3 ?+2: images.length-3}</span>
+                <span className="n-images">
+                  +{length === 3 ? "2" : images.length - 3}
+                </span>
               </div>
             ) : null}
           </div>
@@ -126,3 +106,50 @@ export function img({ src, width, height }) {
 }
 
 */
+
+export function UserInfo({ userName, userIdString }) {
+  return (
+    <div className="username-post">
+      <span>{userName}</span>
+      <span>{userIdString}</span>
+    </div>
+  );
+}
+
+export function InteractionIcons({ nComment, nLikes, nRetweet }) {
+  const [isLike, setIsLike] = useState(false);
+  const [isShared, setIsShared] = useState(false);
+  return (
+    <div className="interaction-item-post">
+      <div className="right">
+        {isLike ? (
+          <BsHeartFill
+            className="icon-post"
+            onClick={() => setIsLike(!isLike)}
+          />
+        ) : (
+          <BsHeart className="icon-post" onClick={() => setIsLike(!isLike)} />
+        )}
+        <span>{nLikes}</span>
+        <FaRegComment className="icon-post" />
+        <span>{nComment}</span>
+        {isShared ? (
+          <FaRetweet
+            className="icon-post"
+            onClick={() => setIsShared(!isShared)}
+          />
+        ) : (
+          <AiOutlineRetweet
+            className="icon-post"
+            onClick={() => setIsShared(!isShared)}
+          />
+        )}
+        <span>{nRetweet}</span>
+      </div>
+      <div className="left">
+        <FiShare2 className="icon-post" />
+        <MdSaveAlt className="icon-post" />
+      </div>
+    </div>
+  );
+}

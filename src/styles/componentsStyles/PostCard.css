@@ -5,33 +5,44 @@
 }
 
 .card-info {
-  margin: 10px;
+  display: flex;
+  background-color: brown;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.userinfo-post {
-  display: flex;
-  align-items: center;
-  padding: 10px 10px;
-  background-color: royalblue;
+.card-info:hover {
+  background: green;
+}
+
+.image-profile {
+  padding: 10px 5px 5px 5px;
+  background-color: antiquewhite;
 }
 
 .userinfo-img-post {
   border-radius: 50px;
 }
 
+.card-item-post {
+  background-color: #634141;
+  padding: 5px;
+}
+
 .username-post {
   display: flex;
-  padding: 5px;
+  margin: 8px 0 0 0;
   flex-direction: column;
-  margin-left: 5px;
   align-items: flex-start;
-  background-color: yellow;
+  background-color: cornsilk;
 }
 
 .description-post {
   background-color: cornflowerblue;
-  padding: 10px;
-  margin: 10px;
+  margin: 10px 0 5px 0;
+  width: 600px;
+  word-break: break-all;
 }
 
 .container-image-post-1 {
@@ -39,9 +50,10 @@
   grid-template-columns: 100%;
   grid-template-rows: 100%;
   justify-items: stretch;
-  max-height: 700px;
-  border-radius: 10px;
+  max-height: 650px;
   overflow: hidden;
+  margin: 10px 10px 10px 0;
+  border-radius: 10px;
 }
 
 .container-image-post-2 {
@@ -49,10 +61,11 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 100%;
   justify-items: stretch;
-  max-height: 700px;
+  max-height: 250px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
+  margin: 10px 0 10px 0;
 }
 
 .container-image-post-4 {
@@ -60,20 +73,11 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   justify-items: stretch;
-  max-height: 700px;
+  max-height: 600px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
 }
-/*
-.background-image-post {
-  margin: 0;
-  align-items: center;
-  justify-content: center;
-  max-width: 700px;
-  max-height: 600px;
-  border-radius: 10px;
-}*/
 
 .image-post {
   width: 100%;
@@ -90,7 +94,7 @@
   filter: brightness(30%);
 }
 
-.n-images-container-3{
+.n-images-container-3 {
   position: absolute;
   display: flex;
   background-color: transparent;
@@ -103,7 +107,7 @@
   cursor: pointer;
 }
 
-.n-images-container-5{
+.n-images-container-5 {
   position: absolute;
   display: flex;
   background-color: transparent;
@@ -116,18 +120,31 @@
   cursor: pointer;
 }
 
-.n-images{
+.n-images {
   font-size: 60px;
   align-items: center;
   justify-content: center;
 }
 
+.interaction-item-post {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 10px 0 10px 10px;
+}
 
-.interaction-post {
+.interaction-item-post .right {
+  background-color: darkgreen;
   display: flex;
   align-items: center;
-  padding: 10px 0 10px 10px;
-  gap: 10px;
+  gap: 5px;
+}
+
+.interaction-item-post .left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-right: 15px;
 }
 
 .icon-post {

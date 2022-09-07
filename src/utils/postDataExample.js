@@ -66,7 +66,7 @@ export const postDataExample = [
       userImage: "/images/profile.jpg",
       userIdString: "@aki-chan",
     },
-    description: "FASFSAFS",
+    description: "FASFSAFScnjdasasasasasasasasasasasasasasasasasasasasasfmassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssp",
     images: [
       {
         image: "/images/P4.jpg",
@@ -114,7 +114,7 @@ export const postDataExample = [
     description: "FASFSAFS",
     images: [
       {
-        image: "/images/P9.jpg",
+        image: "/images/P11.png",
       },
     ],
     nLikes: 7,
