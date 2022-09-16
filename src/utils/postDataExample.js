@@ -6,18 +6,22 @@ export const postDataExample = [
       userImage: "/images/profile.jpg",
       userIdString: "@aki-chan",
     },
-    description: "Miyu-chan es tan tierna",
+    description: "comentario1",
     images: [
       {
+        idImage:1,
         image: "/images/P1.png",
       },
       {
+        idImage:2,
         image: "/images/P7.jpg",
       },
       {
+        idImage:3,
         image: "/images/P11.png",
       },
       {
+        idImage:4,
         image: "/images/P1.png",
       },
     ],
@@ -62,19 +66,22 @@ export const postDataExample = [
   {
     id: "2",
     user: {
-      userName: "Aki-chan",
+      userName: "mirim-chan",
       userImage: "/images/profile.jpg",
-      userIdString: "@aki-chan",
+      userIdString: "@mirim-chan",
     },
     description: "FASFSAFScnjdasasasasasasasasasasasasasasasasasasasasasfmassssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssp",
     images: [
       {
+        idImge:1,
         image: "/images/P4.jpg",
       },
       {
+        idImge:2,
         image: "/images/P5.jpg",
       },
       {
+        idImge:3,
         image: "/images/P5.jpg",
       },
     ],
@@ -114,6 +121,7 @@ export const postDataExample = [
     description: "FASFSAFS",
     images: [
       {
+        idImge:1,
         image: "/images/P11.png",
       },
     ],
@@ -146,13 +154,14 @@ export const postDataExample = [
   {
     id: "3",
     user: {
-      userName: "Aki-chan",
+      userName: "ilya-chan",
       userImage: "/images/profile.jpg",
-      userIdString: "@aki-chan",
+      userIdString: "@ilya-chan",
     },
     description: "FASFSAFS",
     images: [
       {
+        idImge:3,
         image: "/images/P1.png",
       },
     ],
@@ -185,31 +194,38 @@ export const postDataExample = [
   {
     id: "5",
     user: {
-      userName: "Aki-chan",
+      userName: "sashiko-chan",
       userImage: "/images/profile.jpg",
-      userIdString: "@aki-chan",
+      userIdString: "@sashiko-chan",
     },
     description: "Miyu-chan es tan tierna",
     images: [
       {
+        idImge:3,
         image: "/images/P1.png",
       },
       {
+        idImge:3,
         image: "/images/P7.jpg",
       },
       {
+        idImge:3,
         image: "/images/P11.png",
       },
       {
+        idImge:3,
         image: "/images/P1.png",
       },
       {
+        idImge:3,
         image: "/images/P1.png",
       },
       {
+        idImge:3,
         image: "/images/P7.jpg",
       },
       {
+        idImge:3,
         image: "/images/P7.jpg",
       },
     ],

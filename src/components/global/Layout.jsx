@@ -1,7 +1,7 @@
 import HeaderPageComponent from "./HeaderPageComponent";
 import HeaderSeachComponent from "./HeaderSeachComponent";
 import NavbarComponent from "./navbar/NavbarComponent";
-import "../styles/componentsStyles/layout.css";
+import "../../styles/componentsStyles/global/layout.css";
 
 const Layout = ({ children, title, description, login }) => {
   return (

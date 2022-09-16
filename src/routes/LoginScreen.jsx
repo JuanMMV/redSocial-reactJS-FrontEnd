@@ -1,8 +1,8 @@
-import { ModalComponent } from "../components/modal/ModalComponent";
+import { ModalComponent } from "../components/global/modal/ModalComponent";
 import { useState } from "react";
-import RegisterComponent from "../components/RegisterComponent";
+import RegisterComponent from "../components/login/RegisterComponent";
 import { useNavigate } from "react-router-dom";
-import Layout from "../components/Layout";
+import Layout from '../components/global/Layout';
 import "../styles/routesStyles/Login.css";
 
 import React from "react";

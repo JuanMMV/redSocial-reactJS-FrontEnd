@@ -1,13 +1,29 @@
-import { postDataExample } from "../utils/postDataExample";
-import "../styles/componentsStyles/PostCard.css";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { getImagePost } from "../../features/posts/postSlice";
+//datos
+import { postDataExample } from "../../utils/postDataExample";
+//estulos
+import "../../styles/componentsStyles/home/PostCard.css";
+//iconos
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { FaRetweet, FaRegComment } from "react-icons/fa";
 import { AiOutlineRetweet } from "react-icons/ai";
 import { FiShare2 } from "react-icons/fi";
 import { MdSaveAlt } from "react-icons/md";
-import { useState } from "react";
+import CarouselSwiper from "../global/carouselSwiper/CarouselSwiper";
+import { ModalComponent } from "../global/modal/ModalComponent";
+
+import RegisterComponent from "../login/RegisterComponent";
 
 const PostsComponent = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  console.log(isVisible);
+
   return (
     <div className="card-container">
       {postDataExample.map((post, index) => {
@@ -29,9 +45,14 @@ const PostsComponent = () => {
                   userIdString={post.user.userIdString}
                 />
                 <div className="description-post">
-                  <p>{post.description}</p>
+                  <p className="text">{post.description}</p>
                 </div>
-                <Getimages idPost={post.id} images={post.images} />
+                <Getimages
+                  post={post}
+                  navigate={navigate}
+                  dispatch={dispatch}
+                  setIsVisible={setIsVisible}
+                />
                 <InteractionIcons
                   nComment={post.nComment}
                   nLikes={post.nLikes}
@@ -42,13 +63,38 @@ const PostsComponent = () => {
           )
         );
       })}
+
+      <ModalComponent
+        isVisible={isVisible}
+        setIsVisible={setIsVisible}
+        children={<CarouselSwiper />}
+      />
     </div>
   );
 };
 
 export default PostsComponent;
 
-export function Getimages({ idPost, images }) {
+export function Getimages({ post, navigate, dispatch, setIsVisible }) {
+  const images = post.images;
+
+  //const postss = useSelector((state) => state.posts);
+
+  const handleImage = (index) => {
+    /*
+    dispatch(
+      getImagePost({
+        id: post.id,
+        index: index,
+      })
+    );*/
+    setIsVisible(true);
+    //console.log(postss);
+
+    //navigate(`/${post.user.userIdString}/status/${post.id}/image/${index}`);
+    //navigate(`/${username}/status/${idPost}/image/${index}`)
+  };
+
   return (
     <div
       className={
@@ -72,7 +118,7 @@ export function Getimages({ idPost, images }) {
                   ? "image-post-max"
                   : "image-post"
               }
-              onClick={() => console.log("full")}
+              onClick={() => handleImage(index)}
             />
             {(length === 5 && index === 3) || (length === 3 && index === 1) ? (
               <div

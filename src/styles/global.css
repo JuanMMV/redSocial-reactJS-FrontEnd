@@ -2,7 +2,7 @@
 /*      global style      */
 /*========================*/
 :root {
-  --background: #000;
+  --background: rgb(95, 95, 95);
   --brandBackground: #1d9bf020;
   --brandColor: #d9d9d9;
   --itemBackground: #d9d9d920;

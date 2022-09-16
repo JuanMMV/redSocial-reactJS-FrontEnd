@@ -1,4 +1,4 @@
-import '../styles/componentsStyles/HeaderPage.css'
+import '../../styles/componentsStyles/global/HeaderPage.css'
 
 const HeaderPageComponent = () => {
   return (

@@ -1,24 +1,25 @@
 .card-container {
-  background-color: tomato;
+  background-color: transparent;
   width: 70%;
   height: 100%;
+  margin: 0 0 10px 0;
 }
 
 .card-info {
   display: flex;
-  background-color: brown;
-  border-radius: 5px;
+  background-color: transparent;
   padding: 10px;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.397);
 }
 
 .card-info:hover {
-  background: green;
+  background: transparent;
 }
 
 .image-profile {
   padding: 10px 5px 5px 5px;
-  background-color: antiquewhite;
+  background-color: transparent;
 }
 
 .userinfo-img-post {
@@ -26,7 +27,7 @@
 }
 
 .card-item-post {
-  background-color: #634141;
+  background-color: transparent;
   padding: 5px;
 }
 
@@ -35,14 +36,18 @@
   margin: 8px 0 0 0;
   flex-direction: column;
   align-items: flex-start;
-  background-color: cornsilk;
+  background-color: transparent;
 }
 
 .description-post {
-  background-color: cornflowerblue;
+  background-color: transparent;
   margin: 10px 0 5px 0;
   width: 600px;
   word-break: break-all;
+}
+
+.description-post .text {
+  color: burlywood;
 }
 
 .container-image-post-1 {
@@ -73,7 +78,7 @@
   grid-template-columns: 50% 50%;
   grid-template-rows: 50% 50%;
   justify-items: stretch;
-  max-height: 600px;
+  max-height: 450px;
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -129,11 +134,10 @@
 .interaction-item-post {
   display: grid;
   grid-template-columns: 50% 50%;
-  padding: 10px 0 10px 10px;
+  padding: 15px 0 10px 10px;
 }
 
 .interaction-item-post .right {
-  background-color: darkgreen;
   display: flex;
   align-items: center;
   gap: 5px;

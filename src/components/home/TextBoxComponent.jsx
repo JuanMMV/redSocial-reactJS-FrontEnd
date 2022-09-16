@@ -1,4 +1,4 @@
-import '../styles/componentsStyles/Textbox.css'
+import '../../styles/componentsStyles/home/Textbox.css'
 
 const TextBoxComponent = () => {
   return (

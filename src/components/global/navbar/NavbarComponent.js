@@ -1,7 +1,7 @@
-import { navLinks } from "../../utils/navLinks";
+import { navLinks } from "../../../utils/navLinks";
 import { FaTwitter, FaPencilAlt } from "react-icons/fa";
 import { FiMoreHorizontal } from "react-icons/fi";
-import "../../styles/componentsStyles/Navbar.css";
+import "../../../styles/componentsStyles/global/Navbar.css";
 
 export default function NavbarComponent() {
   return (

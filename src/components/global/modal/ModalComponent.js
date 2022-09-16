@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import Modal from 'react-modal'
-import '../../styles/componentsStyles/modal.css'
+import '../../../styles/componentsStyles/global/modal.css'
 
 
 //Modal.setAppElement('#__next')
@@ -7,6 +8,11 @@ import '../../styles/componentsStyles/modal.css'
 export function ModalComponent({ isVisible, setIsVisible, children }) {
 
   //const closeModal = () => setIsVisible(false);
+  useEffect(() => {
+    if (isVisible) {
+      document.body.style.overflow = 'hidden'
+    }
+  }, [isVisible])
 
   return (
     <>
@@ -16,7 +22,8 @@ export function ModalComponent({ isVisible, setIsVisible, children }) {
         appElement={document.getElementById('root') || undefined}
         style={{
           overlay: {
-            backgroundColor: 'transparent'
+            backgroundColor: 'transparent',
+            zIndex:999,
           }
         }}
       >
