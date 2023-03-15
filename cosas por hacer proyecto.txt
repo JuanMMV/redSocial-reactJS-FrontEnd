@@ -1,0 +1,5 @@
+texto post
+al ingresar un post en home podra escribir solo
+texto
+pero si registra una imagen o archivo multinmedia
+necesitara asignarle un tag.
