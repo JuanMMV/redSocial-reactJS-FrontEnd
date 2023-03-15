@@ -4,16 +4,36 @@ export const postSlice = createSlice({
   name: "posts",
   initialState: {
     id: "",
+    userName: "",
+    userImage: "",
+    userIdString: "",
+    description: "",
+    images: [],
+    nLikes: 0,
+    userLikes: [],
+    nComment: 0,
+    comments: [],
+    nRetweet: 7,
+    userRetweet: [],
     index: "",
-    isVisible:true
   },
   reducers: {
     //obtener la imagen full seleccionada mas su post con datos
     getImagePost: (state, action) => {
-      const { id, index, isVisible } = action.payload;
-      state.id = id;
+      const { post, index } = action.payload;
+      state.id = post.id;
+      state.userName = post.userName;
+      state.userImage = post.userImage;
+      state.userIdString = post.userIdString;
+      state.description = post.description;
+      state.images = post.images;
+      state.nLikes = post.nLikes;
+      state.userLikes = post.userLikes;
+      state.nComment = post.nComment;
+      state.comments = post.comments;
+      state.nRetweet = post.nRetweet;
+      state.userRetweet = post.userRetweet;
       state.index = index;
-      isVisible = isVisible
       //state.push(action.payload);
     },
     deleteTemporalPost: (state, action) => {},

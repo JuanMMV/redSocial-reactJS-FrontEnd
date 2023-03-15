@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getImagePost } from "../../features/posts/postSlice";
+import { modalActualState } from "../../features/modalState/modalSlice";
 //datos
 import { postDataExample } from "../../utils/postDataExample";
 //estulos
@@ -18,11 +19,8 @@ import { ModalComponent } from "../global/modal/ModalComponent";
 import RegisterComponent from "../login/RegisterComponent";
 
 const PostsComponent = () => {
-  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
-  console.log(isVisible);
 
   return (
     <div className="card-container">
@@ -51,7 +49,6 @@ const PostsComponent = () => {
                   post={post}
                   navigate={navigate}
                   dispatch={dispatch}
-                  setIsVisible={setIsVisible}
                 />
                 <InteractionIcons
                   nComment={post.nComment}
@@ -65,9 +62,13 @@ const PostsComponent = () => {
       })}
 
       <ModalComponent
-        isVisible={isVisible}
-        setIsVisible={setIsVisible}
-        children={<CarouselSwiper />}
+        children={
+          <CarouselSwiper
+            dispatch={dispatch}
+            modalActualState={modalActualState}
+            navigate={navigate}
+          />
+        }
       />
     </div>
   );
@@ -75,23 +76,27 @@ const PostsComponent = () => {
 
 export default PostsComponent;
 
-export function Getimages({ post, navigate, dispatch, setIsVisible }) {
+export function Getimages({ post, navigate, dispatch }) {
   const images = post.images;
 
   //const postss = useSelector((state) => state.posts);
 
   const handleImage = (index) => {
-    /*
     dispatch(
       getImagePost({
-        id: post.id,
+        post: post,
         index: index,
       })
-    );*/
-    setIsVisible(true);
+    );
+    dispatch(
+      modalActualState({
+        isVisible: true,
+      })
+    );
+    //setIsVisible(true);
     //console.log(postss);
 
-    //navigate(`/${post.user.userIdString}/status/${post.id}/image/${index}`);
+    navigate(`/${post.user.userIdString}/status/${post.id}/image/${index}`);
     //navigate(`/${username}/status/${idPost}/image/${index}`)
   };
 

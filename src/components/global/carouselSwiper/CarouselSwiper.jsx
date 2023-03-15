@@ -5,25 +5,34 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import "../../../styles/componentsStyles/global/carouselSwiper.css";
+import { useSelector } from "react-redux";
 
-const CarouselSwiper = () => {
+const CarouselSwiper = ({ dispatch, modalActualState, navigate }) => {
+  const postData = useSelector((state) => state.posts);
+  console.log(postData);
+  const handleClose = () => {
+    dispatch(
+      modalActualState({
+        isVisible: false,
+      })
+    );
+    navigate("/");
+  };
+
   return (
     <div className="carousel-container">
- 
       <div className="carousel-show">
         <div className="close-carousel">
-          <span>x</span>
+          <span onClick={() => handleClose()}>x</span>
         </div>
         <Swiper modules={[Navigation]} navigation>
-          <SwiperSlide>
-            <img src="/images/P7.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-          
-            <img src="/images/P8.jpg" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-          <SwiperSlide>Slide 4</SwiperSlide>
+          {postData.images.map((post, index) => {
+            return (
+              <SwiperSlide key={index}>
+                <img src={post.image} alt="imagen" />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         <div className="button">
           <h1>Likes</h1>

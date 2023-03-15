@@ -1,11 +1,19 @@
-import { useNavigate } from "react-router-dom";
-
-const RegisterComponent = ({ setIsVisible }) => {
-
-  const navigate = useNavigate();
+const RegisterComponent = ({ dispatch, modalActualState, navigate }) => {
+  const closeModal = () => {
+    dispatch(
+      modalActualState({
+        isVisible: false,
+      })
+    );
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    dispatch(
+      modalActualState({
+        isVisible: false,
+      })
+    );
     navigate("/");
   };
 
@@ -15,7 +23,7 @@ const RegisterComponent = ({ setIsVisible }) => {
         <button
           type="button"
           className="close-button"
-          onClick={() => setIsVisible(false)}
+          onClick={() => closeModal()}
         >
           X
         </button>
@@ -45,10 +53,7 @@ const RegisterComponent = ({ setIsVisible }) => {
             placeholder="Repita contraseña"
             name="password"
           />
-          <button
-            className="button-form"
-            type="submit"
-          >
+          <button className="button-form" type="submit">
             Registrarse
           </button>
         </div>
